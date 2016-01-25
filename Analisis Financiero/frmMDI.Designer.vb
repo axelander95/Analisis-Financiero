@@ -28,12 +28,15 @@ Partial Class frmMDI
         Me.itmAbrir = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmGuardar = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmGuardarComo = New System.Windows.Forms.ToolStripMenuItem()
-        Me.itmSeparadorSalir = New System.Windows.Forms.ToolStripSeparator()
+        Me.separador1 = New System.Windows.Forms.ToolStripSeparator()
         Me.itmCerrarProyecto = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmSalir = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmDatos = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmCuentas = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmTransacciones = New System.Windows.Forms.ToolStripMenuItem()
+        Me.separador2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.itmIndicadores = New System.Windows.Forms.ToolStripMenuItem()
+        Me.itmFormulas = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmInformacionEmpresa = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmVer = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmEstadosFinancieros = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,7 +63,7 @@ Partial Class frmMDI
         '
         'itmArchivo
         '
-        Me.itmArchivo.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.itmNuevo, Me.itmAbrir, Me.itmGuardar, Me.itmGuardarComo, Me.itmSeparadorSalir, Me.itmCerrarProyecto, Me.itmSalir})
+        Me.itmArchivo.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.itmNuevo, Me.itmAbrir, Me.itmGuardar, Me.itmGuardarComo, Me.separador1, Me.itmCerrarProyecto, Me.itmSalir})
         Me.itmArchivo.Name = "itmArchivo"
         Me.itmArchivo.Size = New System.Drawing.Size(60, 20)
         Me.itmArchivo.Text = "Archivo"
@@ -93,10 +96,10 @@ Partial Class frmMDI
         Me.itmGuardarComo.Size = New System.Drawing.Size(221, 22)
         Me.itmGuardarComo.Text = "Guardar como..."
         '
-        'itmSeparadorSalir
+        'separador1
         '
-        Me.itmSeparadorSalir.Name = "itmSeparadorSalir"
-        Me.itmSeparadorSalir.Size = New System.Drawing.Size(218, 6)
+        Me.separador1.Name = "separador1"
+        Me.separador1.Size = New System.Drawing.Size(218, 6)
         '
         'itmCerrarProyecto
         '
@@ -114,7 +117,7 @@ Partial Class frmMDI
         '
         'itmDatos
         '
-        Me.itmDatos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.itmCuentas, Me.itmTransacciones, Me.itmInformacionEmpresa})
+        Me.itmDatos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.itmCuentas, Me.itmIndicadores, Me.itmFormulas, Me.separador2, Me.itmInformacionEmpresa, Me.itmTransacciones})
         Me.itmDatos.Name = "itmDatos"
         Me.itmDatos.Size = New System.Drawing.Size(49, 20)
         Me.itmDatos.Text = "Datos"
@@ -132,6 +135,23 @@ Partial Class frmMDI
         Me.itmTransacciones.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Up), System.Windows.Forms.Keys)
         Me.itmTransacciones.Size = New System.Drawing.Size(252, 22)
         Me.itmTransacciones.Text = "Transacciones"
+        '
+        'separador2
+        '
+        Me.separador2.Name = "separador2"
+        Me.separador2.Size = New System.Drawing.Size(249, 6)
+        '
+        'itmIndicadores
+        '
+        Me.itmIndicadores.Name = "itmIndicadores"
+        Me.itmIndicadores.Size = New System.Drawing.Size(252, 22)
+        Me.itmIndicadores.Text = "Indicadores"
+        '
+        'itmFormulas
+        '
+        Me.itmFormulas.Name = "itmFormulas"
+        Me.itmFormulas.Size = New System.Drawing.Size(252, 22)
+        Me.itmFormulas.Text = "Fórmulas"
         '
         'itmInformacionEmpresa
         '
@@ -225,7 +245,7 @@ Partial Class frmMDI
     Friend WithEvents itmAbrir As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents itmGuardar As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents itmGuardarComo As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents itmSeparadorSalir As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents separador1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents itmSalir As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents sstBarraEstado As System.Windows.Forms.StatusStrip
     Friend WithEvents itmDatos As System.Windows.Forms.ToolStripMenuItem
@@ -241,5 +261,8 @@ Partial Class frmMDI
     Friend WithEvents sfdGuardar As System.Windows.Forms.SaveFileDialog
     Friend WithEvents itmCerrarProyecto As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents lblEstado As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents separador2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents itmIndicadores As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents itmFormulas As System.Windows.Forms.ToolStripMenuItem
 
 End Class

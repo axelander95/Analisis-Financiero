@@ -74,8 +74,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Cuenta.vb" />
     <Compile Include="Clases\Empresa.vb" />
     <Compile Include="Clases\ProyectoUsuario.vb" />
+    <Compile Include="Clases\Transaccion.vb" />
     <Compile Include="Formularios\frmAcercaDe.Designer.vb">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>
     </Compile>
@@ -86,6 +88,12 @@
       <DependentUpon>frmAnalisisFinanciero.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmAnalisisFinanciero.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmBusquedaCuentas.Designer.vb">
+      <DependentUpon>frmBusquedaCuentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmBusquedaCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmCuentas.Designer.vb">
@@ -126,6 +134,8 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Archivo.vb" />
+    <Compile Include="Modulos\GestorCuentas.vb" />
+    <Compile Include="Modulos\GestorTransacciones.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -148,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmAnalisisFinanciero.resx">
       <DependentUpon>frmAnalisisFinanciero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmBusquedaCuentas.resx">
+      <DependentUpon>frmBusquedaCuentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCuentas.resx">
       <DependentUpon>frmCuentas.vb</DependentUpon>
@@ -186,7 +199,9 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\arrow_up.gif" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\folder_new.gif" />
   </ItemGroup>
@@ -216,6 +231,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_wand.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

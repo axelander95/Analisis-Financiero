@@ -33,5 +33,10 @@ Namespace Modulos
             FormateadorBinario.Serialize(FlujoArchivo, Datos)
             FlujoArchivo.Close()
         End Sub
+        Public Sub CrearDirectorio(ByVal Direccion As String)
+            If Not Directory.Exists(Direccion) Then
+                Directory.CreateDirectory(Direccion)
+            End If
+        End Sub
     End Module
 End Namespace

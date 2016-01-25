@@ -22,12 +22,8 @@ Partial Class frmTransacciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.contenedor = New System.Windows.Forms.ToolStripContainer()
         Me.grvTransacciones = New System.Windows.Forms.DataGridView()
-        Me.txtCodigoCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnBuscarCuenta = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.tlsToolBar = New System.Windows.Forms.ToolStrip()
         Me.lblAñoInicial = New System.Windows.Forms.ToolStripLabel()
         Me.cmbAño = New System.Windows.Forms.ToolStripComboBox()
@@ -72,39 +68,12 @@ Partial Class frmTransacciones
         '
         Me.grvTransacciones.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.grvTransacciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grvTransacciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.txtCodigoCuenta, Me.txtCuenta, Me.btnBuscarCuenta})
         Me.grvTransacciones.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.grvTransacciones.Location = New System.Drawing.Point(3, 3)
         Me.grvTransacciones.Name = "grvTransacciones"
         Me.grvTransacciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.grvTransacciones.Size = New System.Drawing.Size(524, 306)
         Me.grvTransacciones.TabIndex = 0
-        '
-        'txtCodigoCuenta
-        '
-        Me.txtCodigoCuenta.HeaderText = "Código"
-        Me.txtCodigoCuenta.Name = "txtCodigoCuenta"
-        Me.txtCodigoCuenta.ReadOnly = True
-        Me.txtCodigoCuenta.Visible = False
-        '
-        'txtCuenta
-        '
-        Me.txtCuenta.HeaderText = "Cuenta"
-        Me.txtCuenta.Name = "txtCuenta"
-        Me.txtCuenta.ReadOnly = True
-        Me.txtCuenta.Width = 200
-        '
-        'btnBuscarCuenta
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.NullValue = "..."
-        Me.btnBuscarCuenta.DefaultCellStyle = DataGridViewCellStyle2
-        Me.btnBuscarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBuscarCuenta.HeaderText = ""
-        Me.btnBuscarCuenta.Name = "btnBuscarCuenta"
-        Me.btnBuscarCuenta.Text = "..."
-        Me.btnBuscarCuenta.ToolTipText = "Buscar cuenta"
-        Me.btnBuscarCuenta.Width = 25
         '
         'tlsToolBar
         '
@@ -114,7 +83,7 @@ Partial Class frmTransacciones
         Me.tlsToolBar.Location = New System.Drawing.Point(3, 0)
         Me.tlsToolBar.Name = "tlsToolBar"
         Me.tlsToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.tlsToolBar.Size = New System.Drawing.Size(374, 25)
+        Me.tlsToolBar.Size = New System.Drawing.Size(405, 25)
         Me.tlsToolBar.TabIndex = 0
         '
         'lblAñoInicial
@@ -262,8 +231,5 @@ Partial Class frmTransacciones
     Friend WithEvents separador4 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents btnGenerarEstadosFinancieros As System.Windows.Forms.ToolStripButton
     Friend WithEvents btnRealizarAnalisisFinanciero As System.Windows.Forms.ToolStripButton
-    Friend WithEvents txtCodigoCuenta As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txtCuenta As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents btnBuscarCuenta As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
 End Class

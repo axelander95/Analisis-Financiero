@@ -88,6 +88,7 @@ Public Class frmMDI
         itmAnalisisFinanciero.Enabled = Activar
     End Sub
     Private Sub frmMDI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Inicializar()
         EstadoConArchivo(False)
     End Sub
     Private Sub itmSalir_Click(sender As Object, e As EventArgs) Handles itmSalir.Click
