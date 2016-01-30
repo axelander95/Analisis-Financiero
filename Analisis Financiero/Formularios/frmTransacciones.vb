@@ -10,6 +10,8 @@ Public Class frmTransacciones
     Private Const MensajeSeleccionAño As String = "Debe seleccionar un año"
     Private Const MensajeCuentaInvalida As String = "No puede seleccionar esta cuenta, ya tiene cuentas relacionadas a la cuenta seleccionada, tampoco puede repetirse en la tabla actual."
     Private Const MensajeTransaccionesAlmacenadas As String = "Transacciones almacenadas con éxito."
+    Private Const MensajePregunta As String = "Pregunta del Sistema"
+    Private Const MensajeSalir As String = "¿Estás seguro que deseas cerrar el formulario?"
     Public Sub New()
         InitializeComponent()
         CrearColumnasEstandarizadas()
@@ -86,27 +88,37 @@ Public Class frmTransacciones
         If cmbAño.SelectedIndex > -1 Then
             EstadoInicial(False)
             AñadirColumnaAño(cmbAño.SelectedItem)
-            CargarTransaccionesConsecutivas()
+            CargarTransacciones(cmbAño.SelectedItem)
         Else
             MessageBox.Show(MensajeSeleccionAño, MensajeProhibicion, MessageBoxButtons.OK, MessageBoxIcon.Hand)
         End If
     End Sub
-    Private Sub CargarTransaccionesConsecutivas()
+    Private Sub CargarTransacciones(ByVal Año As Integer)
         grvTransacciones.AllowUserToAddRows = False
-        Dim Año As Integer = cmbAño.SelectedItem
         Dim Mdi As frmMDI = MdiParent
         Dim ListaTransaccionesAño As List(Of Transaccion) = CargarAño(Año, Mdi.ArchivoUsuarioProyecto.Transacciones)
         For Each TransaccionExistente As Transaccion In ListaTransaccionesAño
-            grvTransacciones.Rows.Add(New DataGridViewRow())
-            Dim CuentaTransaccion As Cuenta = ObtenerCuenta(TransaccionExistente.CodigoCuenta)
-            If CuentaTransaccion IsNot Nothing Then
-                grvTransacciones.Rows(grvTransacciones.Rows.Count - 1).Cells(txtCodigoCuenta.Name).Value = CuentaTransaccion.Codigo
-                grvTransacciones.Rows(grvTransacciones.Rows.Count - 1).Cells(txtCuenta.Name).Value = CuentaTransaccion.Descripcion
-                grvTransacciones.Rows(grvTransacciones.Rows.Count - 1).Cells(grvTransacciones.Columns.Count - 1).Value = TransaccionExistente.Valor
+            Dim FilaCuenta As DataGridViewRow = ObtenerFilaDeCuenta(TransaccionExistente.CodigoCuenta)
+            If FilaCuenta Is Nothing Then
+                grvTransacciones.Rows.Add(New DataGridViewRow())
+                Dim CuentaTransaccion As Cuenta = ObtenerCuenta(TransaccionExistente.CodigoCuenta)
+                If CuentaTransaccion IsNot Nothing Then
+                    grvTransacciones.Rows(grvTransacciones.Rows.Count - 1).Cells(txtCodigoCuenta.Name).Value = CuentaTransaccion.Codigo
+                    grvTransacciones.Rows(grvTransacciones.Rows.Count - 1).Cells(txtCuenta.Name).Value = CuentaTransaccion.Descripcion
+                    grvTransacciones.Rows(grvTransacciones.Rows.Count - 1).Cells(grvTransacciones.Columns.Count - 1).Value = TransaccionExistente.Valor
+                End If
+            Else
+                FilaCuenta.Cells(grvTransacciones.Columns.Count - 1).Value = TransaccionExistente.Valor
             End If
         Next
         grvTransacciones.AllowUserToAddRows = True
     End Sub
+    Private Function ObtenerFilaDeCuenta(ByVal Codigo As String) As DataGridViewRow
+        For Each Fila As DataGridViewRow In grvTransacciones.Rows
+            If Fila.Cells(txtCodigoCuenta.Name).Value = Codigo Then Return Fila
+        Next
+        Return Nothing
+    End Function
     Private Sub AñadirColumnaAño(ByVal Año As Integer)
         Dim ColumaNueva As New DataGridViewTextBoxColumn()
         AñadirCaracteristicasColumna(50, Año, Año.ToString(), False, True, ColumaNueva,
@@ -164,7 +176,9 @@ Public Class frmTransacciones
         Return False
     End Function
     Private Sub btnAgregarAño_Click(sender As Object, e As EventArgs) Handles btnAgregarAño.Click
-        AñadirColumnaAño(Integer.Parse(grvTransacciones.Columns(grvTransacciones.Columns.Count - 1).HeaderText) + 1)
+        Dim Año As Integer = Integer.Parse(grvTransacciones.Columns(grvTransacciones.Columns.Count - 1).HeaderText) + 1
+        AñadirColumnaAño(Año)
+        CargarTransacciones(Año)
     End Sub
     Private Function TablaEsValida() As Boolean
         For Each Fila As DataGridViewRow In grvTransacciones.Rows
@@ -197,5 +211,36 @@ Public Class frmTransacciones
             MessageBox.Show(MensajeTablaInvalida, MensajeProhibicion, MessageBoxButtons.OK, MessageBoxIcon.Hand)
         End If
         grvTransacciones.AllowUserToAddRows = True
+    End Sub
+
+    Private Sub frmTransacciones_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If grvTransacciones.Columns.Count > 2 Then
+            If Not MessageBox.Show(MensajeSalir, MensajePregunta, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                e.Cancel = True
+            End If
+        End If
+    End Sub
+    Private Sub ValidarDecimal(ByVal sender As Object, ByVal e As KeyPressEventArgs)
+        Dim Celda As TextBox = CType(sender, TextBox)
+        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar = Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator Then
+            If Not Celda.Text.Contains(e.KeyChar.ToString()) Then
+                e.Handled = False
+            Else
+                e.Handled = True
+            End If
+        Else
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub grvTransacciones_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles grvTransacciones.EditingControlShowing
+        Dim Celda As TextBox = CType(e.Control, TextBox)
+        Celda.MaxLength = 18
+        AddHandler Celda.KeyPress, AddressOf ValidarDecimal
+    End Sub
+
+    Private Sub grvTransacciones_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles grvTransacciones.CellEndEdit
+        grvTransacciones.CurrentCell.Value = Val(grvTransacciones.CurrentCell.Value)
     End Sub
 End Class

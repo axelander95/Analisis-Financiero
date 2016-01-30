@@ -83,7 +83,7 @@ Partial Class frmTransacciones
         Me.tlsToolBar.Location = New System.Drawing.Point(3, 0)
         Me.tlsToolBar.Name = "tlsToolBar"
         Me.tlsToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.tlsToolBar.Size = New System.Drawing.Size(405, 25)
+        Me.tlsToolBar.Size = New System.Drawing.Size(374, 25)
         Me.tlsToolBar.TabIndex = 0
         '
         'lblAñoInicial

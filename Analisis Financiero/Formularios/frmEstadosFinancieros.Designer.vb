@@ -31,7 +31,7 @@ Partial Class frmEstadosFinancieros
         'lblAño
         '
         Me.lblAño.AutoSize = True
-        Me.lblAño.Location = New System.Drawing.Point(12, 16)
+        Me.lblAño.Location = New System.Drawing.Point(12, 15)
         Me.lblAño.Name = "lblAño"
         Me.lblAño.Size = New System.Drawing.Size(92, 13)
         Me.lblAño.TabIndex = 0
@@ -41,14 +41,14 @@ Partial Class frmEstadosFinancieros
         '
         Me.cmbAño.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbAño.FormattingEnabled = True
-        Me.cmbAño.Location = New System.Drawing.Point(112, 13)
+        Me.cmbAño.Location = New System.Drawing.Point(112, 12)
         Me.cmbAño.Name = "cmbAño"
-        Me.cmbAño.Size = New System.Drawing.Size(121, 21)
+        Me.cmbAño.Size = New System.Drawing.Size(136, 21)
         Me.cmbAño.TabIndex = 1
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(77, 40)
+        Me.btnAceptar.Location = New System.Drawing.Point(92, 40)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 2
@@ -58,7 +58,7 @@ Partial Class frmEstadosFinancieros
         'btnCancelar
         '
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(158, 40)
+        Me.btnCancelar.Location = New System.Drawing.Point(173, 40)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 3
@@ -71,7 +71,7 @@ Partial Class frmEstadosFinancieros
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(247, 75)
+        Me.ClientSize = New System.Drawing.Size(260, 75)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.cmbAño)

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstTransaccion" targetNamespace="http://tempuri.org/dstTransaccion.xsd" xmlns:mstns="http://tempuri.org/dstTransaccion.xsd" xmlns="http://tempuri.org/dstTransaccion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstTransaccion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dstTransaccion" msprop:Generator_UserDSName="dstTransaccion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtItemTransaccionReporte" msprop:Generator_TableClassName="dtItemTransaccionReporteDataTable" msprop:Generator_TableVarName="tabledtItemTransaccionReporte" msprop:Generator_RowChangedName="dtItemTransaccionReporteRowChanged" msprop:Generator_TablePropName="dtItemTransaccionReporte" msprop:Generator_RowDeletingName="dtItemTransaccionReporteRowDeleting" msprop:Generator_RowChangingName="dtItemTransaccionReporteRowChanging" msprop:Generator_RowEvHandlerName="dtItemTransaccionReporteRowChangeEventHandler" msprop:Generator_RowDeletedName="dtItemTransaccionReporteRowDeleted" msprop:Generator_RowClassName="dtItemTransaccionReporteRow" msprop:Generator_UserTableName="dtItemTransaccionReporte" msprop:Generator_RowEvArgName="dtItemTransaccionReporteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" msprop:Generator_UserColumnName="Cuenta" type="xs:string" minOccurs="0" />
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
