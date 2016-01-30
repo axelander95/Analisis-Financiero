@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Clases\Cuenta.vb" />
     <Compile Include="Clases\Empresa.vb" />
+    <Compile Include="Clases\Indicador.vb" />
     <Compile Include="Clases\ItemTransaccionReporte.vb" />
     <Compile Include="Clases\ProyectoUsuario.vb" />
     <Compile Include="Clases\Transaccion.vb" />
@@ -112,6 +113,18 @@
       <DependentUpon>frmEstadosFinancieros.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmEstadosFinancieros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmIndicador.Designer.vb">
+      <DependentUpon>frmIndicador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmIndicador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmIndicadores.Designer.vb">
+      <DependentUpon>frmIndicadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmIndicadores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmInformacionEmpresa.Designer.vb">
@@ -173,6 +186,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEstadosFinancieros.resx">
       <DependentUpon>frmEstadosFinancieros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmIndicador.resx">
+      <DependentUpon>frmIndicador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmIndicadores.resx">
+      <DependentUpon>frmIndicadores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmInformacionEmpresa.resx">
       <DependentUpon>frmInformacionEmpresa.vb</DependentUpon>

@@ -110,4 +110,9 @@ Public Class frmMDI
         GuardarDatosArchivo(ObtenerDireccionArchivoUsuario, ArchivoUsuarioProyecto)
         CambiarMensajeEstado("Proyecto guardado con éxito")
     End Sub
+
+    Private Sub itmIndicadores_Click(sender As Object, e As EventArgs) Handles itmIndicadores.Click
+        frmIndicadores.MdiParent = Me
+        frmIndicadores.Show()
+    End Sub
 End Class

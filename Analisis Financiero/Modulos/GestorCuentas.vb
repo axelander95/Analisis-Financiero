@@ -7,7 +7,8 @@ Namespace Modulos
         Public ListaCuentas As List(Of Cuenta)
         Public Sub Inicializar()
             CrearDirectorio(Directorio)
-            ListaCuentas = ObtenerDatosArchivo(Directorio & NombreArchivo)
+            CambiarDireccionArchivoCuentas(Directorio & NombreArchivo)
+            ListaCuentas = ObtenerDatosArchivo(ObtenerDireccionArchivoCuentas())
             If ListaCuentas Is Nothing Then ListaCuentas = New List(Of Cuenta)
         End Sub
         Public Function ObtenerCuenta(ByVal Codigo As String) As Cuenta

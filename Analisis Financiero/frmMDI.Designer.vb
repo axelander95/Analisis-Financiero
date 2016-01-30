@@ -33,11 +33,11 @@ Partial Class frmMDI
         Me.itmSalir = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmDatos = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmCuentas = New System.Windows.Forms.ToolStripMenuItem()
-        Me.itmTransacciones = New System.Windows.Forms.ToolStripMenuItem()
-        Me.separador2 = New System.Windows.Forms.ToolStripSeparator()
         Me.itmIndicadores = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmFormulas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.separador2 = New System.Windows.Forms.ToolStripSeparator()
         Me.itmInformacionEmpresa = New System.Windows.Forms.ToolStripMenuItem()
+        Me.itmTransacciones = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmVer = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmEstadosFinancieros = New System.Windows.Forms.ToolStripMenuItem()
         Me.itmAnalisisFinanciero = New System.Windows.Forms.ToolStripMenuItem()
@@ -129,29 +129,24 @@ Partial Class frmMDI
         Me.itmCuentas.Size = New System.Drawing.Size(252, 22)
         Me.itmCuentas.Text = "Cuentas"
         '
-        'itmTransacciones
-        '
-        Me.itmTransacciones.Name = "itmTransacciones"
-        Me.itmTransacciones.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Up), System.Windows.Forms.Keys)
-        Me.itmTransacciones.Size = New System.Drawing.Size(252, 22)
-        Me.itmTransacciones.Text = "Transacciones"
-        '
-        'separador2
-        '
-        Me.separador2.Name = "separador2"
-        Me.separador2.Size = New System.Drawing.Size(249, 6)
-        '
         'itmIndicadores
         '
         Me.itmIndicadores.Name = "itmIndicadores"
+        Me.itmIndicadores.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
         Me.itmIndicadores.Size = New System.Drawing.Size(252, 22)
         Me.itmIndicadores.Text = "Indicadores"
         '
         'itmFormulas
         '
         Me.itmFormulas.Name = "itmFormulas"
+        Me.itmFormulas.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Q), System.Windows.Forms.Keys)
         Me.itmFormulas.Size = New System.Drawing.Size(252, 22)
         Me.itmFormulas.Text = "Fórmulas"
+        '
+        'separador2
+        '
+        Me.separador2.Name = "separador2"
+        Me.separador2.Size = New System.Drawing.Size(249, 6)
         '
         'itmInformacionEmpresa
         '
@@ -160,11 +155,18 @@ Partial Class frmMDI
         Me.itmInformacionEmpresa.Size = New System.Drawing.Size(252, 22)
         Me.itmInformacionEmpresa.Text = "Información de la empresa"
         '
+        'itmTransacciones
+        '
+        Me.itmTransacciones.Name = "itmTransacciones"
+        Me.itmTransacciones.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Up), System.Windows.Forms.Keys)
+        Me.itmTransacciones.Size = New System.Drawing.Size(252, 22)
+        Me.itmTransacciones.Text = "Transacciones"
+        '
         'itmVer
         '
         Me.itmVer.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.itmEstadosFinancieros, Me.itmAnalisisFinanciero})
         Me.itmVer.Name = "itmVer"
-        Me.itmVer.Size = New System.Drawing.Size(36, 20)
+        Me.itmVer.Size = New System.Drawing.Size(35, 20)
         Me.itmVer.Text = "Ver"
         '
         'itmEstadosFinancieros
